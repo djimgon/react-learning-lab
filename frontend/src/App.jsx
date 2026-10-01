@@ -1,12 +1,8 @@
 import './styles/App.css'
+import Card from './exercises/01-profile-card-props/Card';
 
 function App() {
-
-  return (
-    <>
-      <h1>React Learning Lab</h1>
-    </>
-  )
+  return <Card />
 }
 
 export default App
