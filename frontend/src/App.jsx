@@ -1,4 +1,4 @@
-import Exercise from './exercises/01-profile-card-props/Exercise'
+import Exercise from './exercises/02-mood-board/Exercise'
 
 function App() {
   return <Exercise />
