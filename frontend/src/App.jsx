@@ -1,4 +1,4 @@
-import Exercise from './exercises/02-mood-board/Exercise'
+import Exercise from './exercises/03-counter/Exercise'
 
 function App() {
   return <Exercise />
