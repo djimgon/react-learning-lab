@@ -11,7 +11,7 @@ const Exercise = () => {
 
   return (
     <div id="toggle-container">
-      <button id="toggle-button" onClick={handleToggleVisibility}>Message</button>
+      <button id="toggle-button" onClick={handleToggleVisibility}>{ isVisible ? "Hide Message" : "Show Message" }</button>
       { isVisible && <p id="message">I love freeCodeCamp!</p> }
     </div>
   );
