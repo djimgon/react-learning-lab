@@ -6,6 +6,7 @@ const Exercise = () => {
 
   const handleToggleVisibility = () => {
     setIsVisible(!isVisible);
+    console.log(isVisible);
   };
 
   return (
