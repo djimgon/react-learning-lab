@@ -4,9 +4,13 @@ import { useState } from "react";
 const Exercise = () => {
   const [isVisible, setIsVisible] = useState(false);
 
+  const handleToggleVisibility = () => {
+    setIsVisible(!isVisible);
+  };
+
   return (
     <div id="toggle-container">
-      <button id="toggle-button">Message</button>
+      <button id="toggle-button" onClick={handleToggleVisibility}>Message</button>
       { isVisible && <p id="message">I love freeCodeCamp!</p> }
     </div>
   );
