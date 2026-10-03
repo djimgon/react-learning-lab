@@ -1,4 +1,4 @@
-import Exercise from './exercises/05-arrays/Exercise'
+import Exercise from './workshop/01-toggle-text-app/Exercise'
 
 function App() {
   return <Exercise />
