@@ -1,5 +1,5 @@
 import './styles.css'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Exercise = () => {
   const [otp, setOtp] = useState("");
@@ -11,6 +11,19 @@ const Exercise = () => {
     setOtp(newOtp);
     setTimeLeft(5);
   };
+
+  useEffect(() => {
+    if (timeLeft < 0) {
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      setTimeLeft(timeLeft -1);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+
+  }, [timeLeft]);
 
   return(
     <div className="container">
