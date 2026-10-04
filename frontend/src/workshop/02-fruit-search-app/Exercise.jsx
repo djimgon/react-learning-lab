@@ -14,7 +14,18 @@ const Exercise = () => {
       setResults([]);
       return;
     }
-    const timeoutId = setTimeout(() => {}, 700);
+    const timeoutId = setTimeout(async () => {
+      try {
+        const response = await fetch(
+          `https://fruit-search.freecodecamp.rocks/api/fruits?q=${query}`
+        );
+        const data = await response.json();
+        setResults(data.map((fruit) => fruit.name));
+      } catch (error) {
+        console.error(error);
+      }
+      return () => clearTimeout(timeoutId);
+    }, 700);
   }, [query]);
 
   return (
