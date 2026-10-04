@@ -1,4 +1,4 @@
-import Exercise from './exercises/06-useRef/Exercise'
+import Exercise from './exercises/07-useDebounce/Exercise'
 
 function App() {
   return <Exercise />
