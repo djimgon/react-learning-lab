@@ -9,6 +9,7 @@ const Exercise = () => {
     const newOtp = Math.floor(100000 + Math.random() * 900000).toString();
 
     setOtp(newOtp);
+    setTimeLeft(5);
   };
 
   return(
@@ -17,7 +18,9 @@ const Exercise = () => {
       <h2 id="otp-display">
         {otp || "Click 'Generate OTP' to get a code"}
       </h2>
-      <p id="otp-timer" aria-live="polite"></p>
+      <p id="otp-timer" aria-live="polite">
+        {timeLeft > 0 ? `Expires in: ${timeLeft} seconds` : ""}
+      </p>
       <button id="generate-otp-button" onClick={generateOTP}>
         Generate OTP
       </button>
