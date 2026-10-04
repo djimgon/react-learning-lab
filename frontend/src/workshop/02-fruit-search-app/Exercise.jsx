@@ -1,5 +1,5 @@
 import './styles.css'
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 const Exercise = () => {
   const [query, setQuery] = useState("");
@@ -8,6 +8,14 @@ const Exercise = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
   }
+
+  useEffect(() => {
+    if (query.trim() === '') {
+      setResults([]);
+      return;
+    }
+    const timeoutId = setTimeout(() => {}, 700);
+  }, [query]);
 
   return (
     <div id="search-container">
