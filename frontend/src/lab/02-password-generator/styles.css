@@ -1,24 +1,62 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #f4f6f8, #e9eef5);
+}
+
 .container {
+  width: 100%;
   max-width: 420px;
-  margin: 60px auto;
-  padding: 24px;
+  padding: 36px;
   text-align: center;
-  border: 1px solid #ddd;
-  border-radius: 12px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+#otp-title {
+  margin: 0 0 24px;
+  font-size: 32px;
 }
 
 #otp-display {
   margin: 24px 0;
-  font-size: 17px;
+  padding: 20px;
+  font-size: 28px;
+  letter-spacing: 4px;
+  background: #f7f8fa;
+  border: 1px solid #e1e4e8;
+  border-radius: 12px;
 }
 
 #otp-timer {
   min-height: 24px;
-  margin-bottom: 20px;
+  margin: 0 0 24px;
+  font-size: 15px;
 }
 
 #generate-otp-button {
-  padding: 10px 18px;
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 10px;
   font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
+  background: #111827;
+  color: #ffffff;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#generate-otp-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+#generate-otp-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
 }
