@@ -1,4 +1,4 @@
-import Exercise from './workshop/02-fruit-search-app/Exercise'
+import Exercise from './lab/02-password-generator/Exercise'
 
 function App() {
   return <Exercise />
