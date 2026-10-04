@@ -24,8 +24,8 @@ const Exercise = () => {
       } catch (error) {
         console.error(error);
       }
-      return () => clearTimeout(timeoutId);
     }, 700);
+    return () => clearTimeout(timeoutId);
   }, [query]);
 
   return (
