@@ -1,4 +1,4 @@
-import Exercise from './exercises/07-useDebounce/Exercise'
+import Exercise from './workshop/02-fruit-search-app/Exercise'
 
 function App() {
   return <Exercise />
