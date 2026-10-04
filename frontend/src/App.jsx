@@ -1,4 +1,4 @@
-import Exercise from './lab/01-color-picker/Exercise'
+import Exercise from './exercises/06-useRef/Exercise'
 
 function App() {
   return <Exercise />
