@@ -1,4 +1,4 @@
-import Exercise from './exercises/08-controlled-forms/Exercise'
+import Exercise from './exercises/09-uncontrolled-forms/Exercise'
 
 function App() {
   return <Exercise />
