@@ -1,4 +1,4 @@
-import Exercise from './lab/02-password-generator/Exercise'
+import Exercise from './exercises/08-controlled-forms/Exercise'
 
 function App() {
   return <Exercise />
