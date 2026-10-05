@@ -6,6 +6,7 @@ const Exercise = () => {
   const [email, setEmail] = useState("");
   const [attendees, setAttendees] = useState(1);
   const [dietary, setDietary] = useState("");
+  const [additionalGuests, setAdditionalGuests] = useState(false);
 
   return(
     <div className="container">
@@ -55,7 +56,11 @@ const Exercise = () => {
           </label>
 
           <label className="checkbox-row">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              checked={additionalGuests}
+              onChange={(e) => setAdditionalGuests(e.target.checked)}
+            />
             Bringing additional guests
           </label>
 
