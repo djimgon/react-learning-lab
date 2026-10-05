@@ -15,8 +15,21 @@ const Exercise = () => {
       <p>Please complete all fields</p>
       <form>
         <div className="section">
-          <label>Hero Name
-            <input type="text" value={heroName} onChange={(e) => setHeroName(e.target.value)} />
+          <label>
+            Hero Name
+            <input
+              type='text'
+              value={heroName}
+              onChange={e => setHeroName(e.target.value)}
+            />
+          </label>
+          <label>
+            Real Name
+            <input
+              type="password"
+              value={realName}
+              onChange={(e) => setRealName(e.target.value)}
+            />
           </label>
         </div>
       </form>
