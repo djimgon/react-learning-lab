@@ -1,6 +1,9 @@
 import './styles.css'
+import {useState} from "react";
 
 const Exercise = () => {
+  const [name, setName] = useState("");
+
   return(
     <div className="container">
       <div className="form-card">
@@ -10,7 +13,12 @@ const Exercise = () => {
         <form>
           <label>
             Name
-            <input type="text" required />
+            <input
+              type="text"
+              required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
           </label>
 
           <label>
