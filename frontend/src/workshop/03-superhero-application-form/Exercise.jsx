@@ -1,15 +1,24 @@
 import './styles.css';
 
-import { useState } from "react";
+import {useState} from "react";
 
 const Exercise = () => {
 
-    const powerSourceOptions = [
+  const powerSourceOptions = [
     'Bitten by a strange creature',
     'Radioactive exposure',
     'Science experiment',
     'Alien heritage',
     'Ancient artifact discovery',
+    'Other'
+  ];
+
+  const powersOptions = [
+    'Super Strength',
+    'Super Speed',
+    'Flight',
+    'Invisibility',
+    'Telekinesis',
     'Other'
   ];
 
@@ -42,16 +51,28 @@ const Exercise = () => {
             />
           </label>
         </div>
-        <label className="section column">
+        <label className='section column'>
           How did you get your powers?
-          <select>
-            <option value="">Select one</option>
-            {powerSourceOptions.map((source) => (
+          <select value={powerSource} onChange={e => setPowerSource(e.target.value)}>
+            <option value=''>
+              Select one
+            </option>
+            {powerSourceOptions.map(source => (
               <option key={source} value={source}>
                 {source}
               </option>
             ))}
           </select>
+        </label>
+        <label className='section column'>
+          List your powers (select all that apply):
+
+          {powersOptions.map(power => (
+            <label key={power}>
+              <input type="checkbox" value={power}/>
+              <span>{power}</span>
+            </label>
+          ))}
         </label>
       </form>
     </div>
