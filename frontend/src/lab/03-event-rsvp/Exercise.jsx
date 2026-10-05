@@ -7,6 +7,12 @@ const Exercise = () => {
   const [attendees, setAttendees] = useState(1);
   const [dietary, setDietary] = useState("");
   const [additionalGuests, setAdditionalGuests] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
 
   return(
     <div className="container">
@@ -14,7 +20,7 @@ const Exercise = () => {
         <h1>Event RSVP</h1>
         <p>Please fill out the form to confirm your attendance.</p>
 
-        <form>
+        <form onSubmit={handleSubmit}>
           <label>
             Name
             <input
