@@ -42,7 +42,7 @@ const Exercise = () => {
     <div className="form-wrap">
       <h2>Superhero Application Form</h2>
       <p>Please complete all fields</p>
-      <form>
+      <form method='post' action='https://superhero-application-form.freecodecamp.org'>
         <div className="section">
           <label>
             Hero Name
@@ -89,6 +89,13 @@ const Exercise = () => {
             </label>
           ))}
         </label>
+        <button
+          className='submit-btn'
+          type='submit'
+          disabled={!heroName || !realName || !powerSource || powers.length === 0}
+        >
+          Join the League
+        </button>
       </form>
     </div>
   );
