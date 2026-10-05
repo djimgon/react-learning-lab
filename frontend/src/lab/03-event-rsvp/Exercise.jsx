@@ -3,6 +3,7 @@ import {useState} from "react";
 
 const Exercise = () => {
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
 
   return(
     <div className="container">
@@ -23,7 +24,12 @@ const Exercise = () => {
 
           <label>
             Email
-            <input type="email" required />
+            <input
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </label>
 
           <label>
