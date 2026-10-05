@@ -1,4 +1,4 @@
-import Exercise from './exercises/11-useactionstateoutsideaform/Exercise'
+import Exercise from './workshop/03-superhero-application-form/Exercise';
 
 function App() {
   return <Exercise />
