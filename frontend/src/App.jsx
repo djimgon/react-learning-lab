@@ -1,4 +1,4 @@
-import Exercise from './workshop/03-superhero-application-form/Exercise';
+import Exercise from './lab/03-event-rsvp/Exercise';
 
 function App() {
   return <Exercise />
