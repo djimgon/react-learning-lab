@@ -4,6 +4,7 @@ import {useState} from "react";
 const Exercise = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [attendees, setAttendees] = useState(1);
 
   return(
     <div className="container">
@@ -34,7 +35,13 @@ const Exercise = () => {
 
           <label>
             Number of attendees
-            <input type="number" min="1" required />
+            <input
+              type="number"
+              min="1"
+              required
+              value={attendees}
+              onChange={(e) => setAttendees(Number(e.target.value))}
+            />
           </label>
 
           <label>
