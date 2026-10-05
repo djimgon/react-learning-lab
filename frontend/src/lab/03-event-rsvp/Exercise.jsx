@@ -5,6 +5,7 @@ const Exercise = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [attendees, setAttendees] = useState(1);
+  const [dietary, setDietary] = useState("");
 
   return(
     <div className="container">
@@ -46,7 +47,11 @@ const Exercise = () => {
 
           <label>
             Dietary preferences
-            <input type="text" />
+            <input
+              type="text"
+              value={dietary}
+              onChange={(e) => setDietary(e.target.value)}
+            />
           </label>
 
           <label className="checkbox-row">
