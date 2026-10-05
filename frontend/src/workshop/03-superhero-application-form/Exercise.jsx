@@ -22,6 +22,16 @@ const Exercise = () => {
     'Other'
   ];
 
+  const handlePowersChange = (e) => {
+    const { value, checked } = e.target;
+
+    setPowers(
+      checked
+        ? [...powers, value]
+        : powers.filter((p) => p !== value)
+    );
+  };
+
   const [heroName, setHeroName] = useState("");
   const [realName, setRealName] = useState("");
 
@@ -69,7 +79,12 @@ const Exercise = () => {
 
           {powersOptions.map(power => (
             <label key={power}>
-              <input type="checkbox" value={power}/>
+              <input
+                type='checkbox'
+                value={power}
+                checked={powers.includes(power)}
+                onChange={handlePowersChange}
+              />
               <span>{power}</span>
             </label>
           ))}
