@@ -4,37 +4,42 @@
 
 body {
   margin: 0;
+  min-height: 100vh;
   font-family: Arial, sans-serif;
-  background: #f4f6f8;
+  background: linear-gradient(135deg, #f4f6f8, #e9eef5);
+}
+
+#root {
+  min-height: 100vh;
 }
 
 .container {
   min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 20px;
+  justify-content: center;
+  padding: 24px;
 }
 
 .form-card {
   width: 100%;
-  max-width: 500px;
-  background: white;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  max-width: 480px;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
 }
 
 .form-card h1 {
-  margin-top: 0;
-  margin-bottom: 10px;
+  margin: 0 0 10px;
   text-align: center;
+  font-size: 32px;
 }
 
 .form-card > p {
-  margin-bottom: 25px;
+  margin: 0 0 28px;
   text-align: center;
-  color: #666;
+  color: #6b7280;
 }
 
 form {
@@ -52,15 +57,20 @@ label {
 
 input {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
   border-radius: 8px;
+  background: #ffffff;
   font-size: 16px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 input:focus {
   outline: none;
-  border-color: #555;
+  border-color: #111827;
+  box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.08);
 }
 
 .checkbox-row {
@@ -71,19 +81,46 @@ input:focus {
 
 .checkbox-row input {
   width: auto;
+  margin: 0;
 }
 
 button {
-  padding: 12px;
+  width: 100%;
+  padding: 14px 20px;
   border: none;
-  border-radius: 8px;
+  border-radius: 9px;
+  background: #111827;
+  color: #ffffff;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  background: #222;
-  color: white;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
-button:hover {
-  opacity: 0.9;
+button:not(:disabled):hover {
+  background: #000000;
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  background: #d1d5db;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.confirmation {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.confirmation h2 {
+  margin: 0 0 18px;
+}
+
+.confirmation p {
+  margin: 10px 0;
+  color: #374151;
 }

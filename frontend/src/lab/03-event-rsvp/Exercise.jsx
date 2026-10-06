@@ -70,8 +70,26 @@ const Exercise = () => {
             Bringing additional guests
           </label>
 
-          <button type="submit">Submit RSVP</button>
+          <button
+            type="submit"
+            disabled={!name.trim() || !email.trim() || attendees < 1}
+          >
+            Submit RSVP
+          </button>
         </form>
+        {submitted && (
+          <div className="confirmation">
+            <h2>RSVP Submitted!</h2>
+
+            <p>Name: {name}</p>
+            <p>Email: {email}</p>
+            <p>Number of attendees: {attendees}</p>
+            <p>Dietary preferences: {dietary || "None"}</p>
+            <p>
+              Bringing additional guests: {additionalGuests ? "Yes" : "No"}
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );
