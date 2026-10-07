@@ -1,4 +1,4 @@
-import Exercise from './lab/03-event-rsvp/Exercise';
+import Exercise from './exercises/12-data-fetching-with-api/Exercise';
 
 function App() {
   return <Exercise />
