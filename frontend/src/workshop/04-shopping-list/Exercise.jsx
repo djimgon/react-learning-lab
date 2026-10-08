@@ -1,33 +1,46 @@
 import './styles.css'
-import {useState} from "react";
+import {useState, useMemo, useCallback} from "react";
+
+const items = [
+  "Apples",
+  "Bananas",
+  "Strawberries",
+  "Blueberries",
+  "Mangoes",
+  "Pineapple",
+  "Lettuce",
+  "Broccoli",
+  "Paper Towels",
+  "Dish Soap",
+];
+
+let prevToggleItem = null;
 
 const Exercise = () => {
-  const items = [
-    "Apples",
-    "Bananas",
-    "Strawberries",
-    "Blueberries",
-    "Mangoes",
-    "Pineapple",
-    "Lettuce",
-    "Broccoli",
-    "Paper Towels",
-    "Dish Soap"
-  ];
-
   const [query, setQuery] = useState("");
   const [selectedItems, setSelectedItems] = useState([]);
 
-
-  const filteredItems = items.filter((item) =>
-    item.toLowerCase().includes(query.toLowerCase())
-  );
-
-  const toggleItem = (item) => {
-    setSelectedItems((prev) =>
-      prev.includes(item) ? prev.filter((i) => i !== item) : [...prev, item]
+  const filteredItems = useMemo(() => {
+    console.log("Filtering items...");
+    return items.filter((item) =>
+      item.toLowerCase().includes(query.toLowerCase())
     );
-  };
+  }, [query]);
+
+  const toggleItem = useCallback((item) => {
+    setSelectedItems((prev) =>
+      prev.includes(item)
+        ? prev.filter((i) => i !== item)
+        : [...prev, item]
+    );
+  }, [setSelectedItems]);
+
+  if (prevToggleItem !== toggleItem) {
+    console.log("New toggleItem function");
+    prevToggleItem = toggleItem;
+  } else {
+    console.log("Current toggleItem function");
+  }
 
   return (
     <div className="container">
