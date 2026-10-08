@@ -17,6 +17,10 @@ const Exercise = () => {
 
   const [query, setQuery] = useState("");
 
+  const filteredItems = items.filter((item) =>{
+    return item;
+  });
+
   return (
     <div className="container">
       <h1>Shopping List</h1>
@@ -31,6 +35,13 @@ const Exercise = () => {
           onChange={(e) => setQuery(e.target.value)}
         />
         <p id="search-description">Type to filter the list below:</p>
+        <ul>
+          {
+            filteredItems.map((item) => (
+              <li key={item}>{item}</li>
+            ))
+          }
+        </ul>
       </form>
     </div>
   );
