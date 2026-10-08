@@ -17,9 +17,7 @@ const Exercise = () => {
 
   const [query, setQuery] = useState("");
 
-  const filteredItems = items.filter((item) =>{
-    return item;
-  });
+  const filteredItems = items.filter((item) => item.toLowerCase().includes(query.toLowerCase()));
 
   return (
     <div className="container">
