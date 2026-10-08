@@ -1,4 +1,4 @@
-import Exercise from './exercises/12-data-fetching-with-api/Exercise';
+import Exercise from './exercises/13-taskList/Exercise';
 
 function App() {
   return <Exercise />
