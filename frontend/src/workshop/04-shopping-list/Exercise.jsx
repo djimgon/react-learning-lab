@@ -1,6 +1,19 @@
 import './styles.css'
 
 const Exercise = () => {
+  const items = [
+    "Apples",
+    "Bananas",
+    "Strawberries",
+    "Blueberries",
+    "Mangoes",
+    "Pineapple",
+    "Lettuce",
+    "Broccoli",
+    "Paper Towels",
+    "Dish Soap"
+  ];
+
   return (
     <div className="container">
       <h1>Shopping List</h1>
