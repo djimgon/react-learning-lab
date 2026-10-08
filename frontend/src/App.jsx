@@ -1,4 +1,4 @@
-import Exercise from './exercises/13-taskList/Exercise';
+import Exercise from './workshop/04-shopping-list/Exercise';
 
 function App() {
   return <Exercise />
