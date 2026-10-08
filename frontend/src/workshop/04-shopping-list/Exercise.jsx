@@ -16,8 +16,18 @@ const Exercise = () => {
   ];
 
   const [query, setQuery] = useState("");
+  const [selectedItems, setSelectedItems] = useState([]);
 
-  const filteredItems = items.filter((item) => item.toLowerCase().includes(query.toLowerCase()));
+
+  const filteredItems = items.filter((item) =>
+    item.toLowerCase().includes(query.toLowerCase())
+  );
+
+  const toggleItem = (item) => {
+    setSelectedItems((prev) =>
+      prev.includes(item) ? prev.filter((i) => i !== item) : [...prev, item]
+    );
+  };
 
   return (
     <div className="container">
@@ -34,11 +44,24 @@ const Exercise = () => {
         />
         <p id="search-description">Type to filter the list below:</p>
         <ul>
-          {
-            filteredItems.map((item) => (
-              <li key={item}>{item}</li>
-            ))
-          }
+          {filteredItems.map((item) => {
+            const isChecked = selectedItems.includes(item);
+            return (
+              <li
+                key={item}
+                style={{ textDecoration: isChecked ? "line-through" : "none" }}
+              >
+                <label>
+                  <input
+                    type="checkbox"
+                    onChange={() => toggleItem(item)}
+                    checked={isChecked}
+                  />
+                  {item}
+                </label>
+              </li>
+            );
+          })}
         </ul>
       </form>
     </div>
