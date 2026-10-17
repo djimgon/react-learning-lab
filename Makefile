@@ -29,7 +29,7 @@ frontend-yarn-install:
 	docker-compose run --rm frontend-node-cli yarn install
 
 frontend-yarn-add:
-	docker-compose run --rm frontend-node-cli yarn add
+	docker-compose run --rm frontend-node-cli yarn add $(ARGS)
 
 frontend-yarn-build:
 	docker-compose run --rm frontend-node-cli yarn build
