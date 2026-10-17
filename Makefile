@@ -36,3 +36,6 @@ frontend-yarn-build:
 
 frontend-yarn-lint:
 	docker-compose run --rm frontend-node-cli yarn lint
+
+frontend-yarn-test:
+	docker-compose run --rm frontend-node-cli yarn test
